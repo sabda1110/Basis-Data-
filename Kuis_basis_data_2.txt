@@ -10,5 +10,5 @@ SELECT 	dosen.`nama` FROM jadwal RIGHT OUTER JOIN dosen ON jadwal.`kd_dosen` =do
 
 SELECT 	dosen.`nama` FROM jadwal LEFT OUTER JOIN dosen ON jadwal.`kd_dosen` =dosen.`kd_dosen` WHERE jadwal.`hari`!="Jumat" 
 
-SELECT 	dosen.`nama` FROM jadwal INNER JOIN dosen ON jadwal.`kd_dosen` =dosen.`kd_dosen` WHERE jadwal.`hari`!="Jumat" 
+SELECT 	dosen.`nama` FROM jadwal FULL OUTER JOIN dosen ON jadwal.`kd_dosen` =dosen.`kd_dosen` WHERE jadwal.`hari`!="Jumat" 
 
