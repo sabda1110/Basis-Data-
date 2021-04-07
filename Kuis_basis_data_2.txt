@@ -1,0 +1,14 @@
+SELECT jadwal.`hari`,dosen.`nama`,COUNT(dosen.`nama`) AS jumlah  FROM dosen,jadwal WHERE jadwal.`kd_dosen`=dosen.`kd_dosen` AND jadwal.`hari`="Selasa" //Menampilkan jumlah nama dosen yang hari senin
+
+SELECT dosen.`nama` FROM jadwal,dosen WHERE dosen.`kd_dosen`=jadwal.`kd_dosen` AND jadwal.`hari`="senin" AND jadwal.`jam`="08.00" AND jadwal.`ruang`="315" //menampilkan nama dosen 
+
+SELECT COUNT(kuliah.`kd_mk`) AS Jumlah mata Kuliah  FROM kuliah,penilaian WHERE kuliah.`kd_mk` = penilaian.`kd_mk` AND penilaian.`nim`="143510100" //menampilkan jumlah mata kuliah yang di ambil
+
+SELECT mhs.`nama` FROM mhs,penilaian,kuliah WHERE mhs.`nim`=penilaian.`nim` AND penilaian.`kd_mk` = kuliah.`kd_mk` AND kuliah.`nama`="Basis Data" AND penilaian.`nilai`="A" // menampilkan nama mhs yang mengambil mata kuliah basis data. 
+
+SELECT 	dosen.`nama` FROM jadwal RIGHT OUTER JOIN dosen ON jadwal.`kd_dosen` =dosen.`kd_dosen` WHERE jadwal.`hari`!="Jumat"
+
+SELECT 	dosen.`nama` FROM jadwal LEFT OUTER JOIN dosen ON jadwal.`kd_dosen` =dosen.`kd_dosen` WHERE jadwal.`hari`!="Jumat" 
+
+SELECT 	dosen.`nama` FROM jadwal INNER JOIN dosen ON jadwal.`kd_dosen` =dosen.`kd_dosen` WHERE jadwal.`hari`!="Jumat" 
+
